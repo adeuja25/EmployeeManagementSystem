@@ -20,6 +20,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	 */
 	@Autowired
 	EmployeeRepository2 empRepo2;
+	
+	//indicate that after adding it will remove all things from cache and if query perform from other method, hits the database
+	@CacheEvict(value="empcache",allEntries=true)
 	public void add(Employee emp) {
 		// TODO Auto-generated method stub
 		// empRepo.save(emp);
@@ -41,7 +44,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	//indicates that it should be cached
+            @Cacheable(value="empcache")
 	public List<Employee> getAllEmployee() {
 		// TODO Auto-generated method stub
 		// return (List<Employee>) empRepo.findAll();
