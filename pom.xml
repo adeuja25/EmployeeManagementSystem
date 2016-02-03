@@ -140,6 +140,12 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+			<!-- Second Level cache -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.9.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>EmployeeManagementSystem</finalName>
